@@ -1,0 +1,16 @@
+{
+  "name": "TerminalHub",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/UsboKirishima/TerminalHub",
+  "author": "UsboKirishima <usbertibox@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^17.0.24",
+    "@types/node-fetch": "^2.6.1",
+    "@types/snekfetch": "^4.0.4",
+    "node-fetch": "2",
+    "pornhub-api": "^0.0.1",
+    "snekfetch": "^4.0.4"
+  }
+}
