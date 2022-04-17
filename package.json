@@ -10,7 +10,6 @@
     "@types/node-fetch": "^2.6.1",
     "@types/snekfetch": "^4.0.4",
     "node-fetch": "2",
-    "pornhub-api": "^0.0.1",
     "snekfetch": "^4.0.4"
   }
 }
