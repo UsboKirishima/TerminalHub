@@ -17,20 +17,17 @@
 </div>
 
 ---
+<div align="center">
 <p>
-🇮🇸 TerminalHub is a simple terminal program created for search pornhub videos from your terminal and 100% anonymous. Written 100% in TypeScript.
+TerminalHub is a simple CLI made to search anonymously contents from PornHub.
 <br>
 </p>
+</div>
 
 <h2>Installation</h2>
 Open the terminal and run following commands
 
-```sh
-git clone https://github.com/UsboKirishima/TerminalHub.git
-
-cd TerminalHub
-
-tsc
-
-node .
-```
+`git clone git@github.com:UsboKirishima/TerminalHub.git`
+`cd TerminalHub``
+`npm install && npm build`
+`npm start --help`
