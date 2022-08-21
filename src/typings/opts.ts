@@ -1,3 +1,3 @@
 export interface TerminalOpts {
-    searchQuery: string;
+    searchQuery?: string;
 }

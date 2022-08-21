@@ -67,18 +67,6 @@ node-fetch@2:
   dependencies:
     whatwg-url "^5.0.0"
 
-pornhub-api@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/pornhub-api/-/pornhub-api-0.0.1.tgz#a0fb799df8e554456bdb21300cce81f204a67878"
-  integrity sha1-oPt5nfjlVEVr2yEwDM6B8gSmeHg=
-  dependencies:
-    snekfetch "^3.1.7"
-
-snekfetch@^3.1.7:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/snekfetch/-/snekfetch-3.6.4.tgz#d13e80a616d892f3d38daae4289f4d258a645120"
-  integrity sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
-
 snekfetch@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/snekfetch/-/snekfetch-4.0.4.tgz#e76a03b8476699a1f0c036d6567e386ce5fbde8e"

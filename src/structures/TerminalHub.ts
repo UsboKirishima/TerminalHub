@@ -8,10 +8,20 @@ export default class TerminalHub {
 
     public searchQuery: string;
 
+    public query: string;
+
     public constructor(opts: TerminalOpts) {
         this.searchQuery = opts.searchQuery;
-        let query = `&search=${this.searchQuery}`
+        this.query = `&search=${this.searchQuery}`
 
-        new RestManager({ url: `https://www.pornhub.com/webmasters/search?`, params: { "search": query }, searchQuery: query});
+       
+    }
+
+    public async search(): Promise<void> {
+        await new RestManager({ url: `https://www.pornhub.com/webmasters/search?`, params: { "search": this.query }, searchQuery: this.query}).search();
+    }
+
+    public async image(): Promise<void> {
+        await new RestManager({ url: `https://www.pornhub.com/webmasters/search?`, params: { "search": this.query }, searchQuery: this.query}).image();
     }
 }

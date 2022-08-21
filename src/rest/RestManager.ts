@@ -5,34 +5,46 @@ import snekfetch from "snekfetch";
 
 export default class RestManager {
 
-    public urlm: any;
+  public urlm: any;
 
-    public headers: any[];
+  public headers: any[];
 
-    public params: any;
-    
-    public searchQuery: string;
+  public params: any;
 
-    public constructor(RestOptions: RestOptions) {
-        this.urlm = RestOptions.url;
-        this.headers = RestOptions.headers;
-        this.params = RestOptions.params;
-        this.searchQuery = RestOptions.searchQuery;
+  public searchQuery: string;
 
-        (async () => {
-            
+  public constructor(RestOptions: RestOptions) {
 
-            let res = await fetch(this.urlm + this.searchQuery, {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-            let parsed = await res.json().then(async (videos) => {
-                await videos.videos.forEach(async (info) => {
-                    console.log(`\n${info.title}\n${info.url}\n\n`);
-                })
-            })
-        })();
+    this.urlm = RestOptions.url;
 
-    }
+    this.headers = RestOptions.headers;
+
+    this.params = RestOptions.params;
+
+    this.searchQuery = RestOptions.searchQuery;
+
+  }
+
+  private async getfetch() {
+    let res = await fetch(this.urlm + this.searchQuery, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    return await res.json();
+  }
+
+  public async search() {
+    let parsed = await this.getfetch();
+    await parsed.videos.forEach(async (info) => {
+      return await console.log(`\n${info.title}\n${info.url}\n\n`);
+    })
+  }
+
+  public async image() {
+    let parsed = await this.getfetch();
+    await parsed.videos.forEach(async (info) => {
+      return await console.log(`\n${info.title}\n${info.thumb}\n\n`);
+    })
+  }
 }
