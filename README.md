@@ -28,6 +28,9 @@ TerminalHub is a simple CLI made to search anonymously contents from PornHub.
 Open the terminal and run following commands
 
 `git clone git@github.com:UsboKirishima/TerminalHub.git`
-`cd TerminalHub``
+
+`cd TerminalHub`
+
 `npm install && npm build`
+
 `npm start --help`
