@@ -1,3 +1,3 @@
-export * from './search'
-export * from './image'
-export * from './help'
+export * from './Search'
+export * from './Image'
+export * from './Help'

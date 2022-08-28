@@ -7,29 +7,44 @@ import {
   Help
 } from './commands';
 
+/**
+ * @method main
+ * @description Run and handle all program.
+ */
 export const main = async () => {
 
   await console.clear();
 
-  const prefix = '--';
 
   switch (process.argv[2]) {
-    case '--help': {
+    /**
+    * @method help
+    * @description Show the all commands avaibles
+    */
+    case 'help': {
       return await new Help().run();
     }
-    break;
-    case '--search': {
+    /**
+    * @method search
+    * @description Search video URLs from PornHub
+    */
+      break;
+    case 'search': {
       return await new Search().run();
     }
-    break;
-    case '--image': {
+    /**
+    * @method image
+    * @description Search images from PornHub
+    */
+      break;
+    case 'image': {
       return await new Image().run();
     }
-    break;
+      break;
     default: {
       console.log('Invalid option: ' + process.argv[2].replace('--', ''));
     }
-    break;
+      break;
   }
 
   await process.exit(1);

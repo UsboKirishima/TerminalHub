@@ -1,3 +1,8 @@
+/**
+ * @name Help
+ * @description Get all informations
+ * @param {()} run - Executes the command
+*/
 export class Help {
     public async run(): Promise<void> {
         let help = await String.raw`
