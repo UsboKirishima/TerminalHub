@@ -42,7 +42,7 @@ export const main = async () => {
     }
       break;
     default: {
-      console.log('Invalid option: ' + process.argv[2].replace('--', ''));
+      console.log('Invalid option: ' + process.argv[2]);
     }
       break;
   }

@@ -3,9 +3,8 @@
  * @description Get all informations
  * @param {()} run - Executes the command
 */
-export class Help {
-    public async run(): Promise<void> {
-        let help = await String.raw`
+
+export const help = String.raw`
 Format:
     th [--option]
     
@@ -20,6 +19,10 @@ Credits:
 
 Copyright (c) 2022 usbo :: MIT License
 `
+
+export class Help {
+    public async run(): Promise<void> {
+
         return await console.log(help);
     }
 }

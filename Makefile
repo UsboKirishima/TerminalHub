@@ -16,3 +16,6 @@ search:
 
 help:
 	clear && ${CC} run build && ${CC} run ${SCRIPT} help
+
+bot:
+	clear && ${CC} run build && ${CC} run bot

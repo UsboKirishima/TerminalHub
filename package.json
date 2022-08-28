@@ -8,12 +8,17 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc",
-    "build-watch": "tsc --watch"
+    "build-watch": "tsc --watch",
+    "bot": "node dist/bot/index.js"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/node": "^18.7.13",
     "@types/node-fetch": "^2.6.1",
     "@types/snekfetch": "^4.0.4",
+    "dotenv": "^16.0.1",
+    "eris": "^0.17.1",
+    "eris-additions": "^1.4.1",
     "node-fetch": "2",
     "snekfetch": "^4.0.4"
   }
