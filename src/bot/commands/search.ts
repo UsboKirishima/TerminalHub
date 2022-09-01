@@ -4,7 +4,7 @@ from '../../rest/RestManager'
 
 import { Client, Message } from 'eris'
 
-export const image = async ({
+export const search = async ({
     client,
     message,
     args
@@ -18,6 +18,6 @@ export const image = async ({
     let parsed = await new RestManager({ url: `https://www.pornhub.com/webmasters/search?`, params: { "search": query }, searchQuery: query}).getfetch();
     let random = Math.floor(Math.random() * 30);
     await message.channel.createMessage({
-        content: `${parsed.videos[random].thumb}`
+        content: `${parsed.videos[random].url}`
     })
 }

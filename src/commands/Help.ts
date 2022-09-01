@@ -6,12 +6,12 @@
 
 export const help = String.raw`
 Format:
-    th [--option]
+    th [option]
     
 Options:
-    --help   :: Show all commands.
-    --search :: Search video URLs from pornhub.
-    --image  :: Search image URLs from pornhub.
+    help   :: Show all commands.
+    search :: Search video URLs from pornhub.
+    image  :: Search image URLs from pornhub.
 
 Credits:
     - UsboKirishima

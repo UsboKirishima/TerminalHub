@@ -67,7 +67,7 @@ export default class RestManager {
      * @async true
      * @description This function makes the http requestes and returns the json
      */
-  private async getfetch() {
+  public async getfetch() {
     let res = await fetch(this.urlm + this.searchQuery, {
       headers: {
         "Content-Type": "application/json"
