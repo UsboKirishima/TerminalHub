@@ -2,6 +2,7 @@ import { RestOptions } from "../typings/RestOptions";
 import fetch, { Request } from "node-fetch";
 import { URLSearchParams } from "url";
 import snekfetch from "snekfetch";
+import { blue, bold, cyan, green, grey, rainbow, yellow } from "colors";
 
 /**
  * @method RestManager
@@ -85,8 +86,19 @@ export default class RestManager {
   public async search() {
     let parsed = await this.getfetch();
     await parsed.videos.forEach(async (info) => {
-      return await console.log(`\n${info.title}\n${info.url}\n\n`);
+
+      let categories = "";
+      await info.categories.forEach(async (category) => {
+        categories += `${category.category} `;
+      })
+
+      console.log(yellow(`\n☆┃ ${info.title}`));
+      console.log(blue(`✈┃ ${info.url}`));
+      console.log(green(`❖┃ ${categories}`));
+      console.log(cyan(`   ⌤ ${info.views} views   ♡ ${info.ratings} likes  ∞ ${info.publish_date.split(' ')[0]}  ☂ ${info.duration}  ${info.segment == "straight" ? "⚤ Straight" : "⚣ Gay"}\n\n`));
     })
+
+    return process.exit(0);
   }
 
   /**
@@ -98,7 +110,19 @@ export default class RestManager {
   public async image() {
     let parsed = await this.getfetch();
     await parsed.videos.forEach(async (info) => {
-      return await console.log(`\n${info.title}\n${info.thumb}\n\n`);
+
+      let categories = "";
+      await info.categories.forEach(async (category) => {
+        categories += `${category.category} `;
+      })
+
+      console.log(yellow(`\n☆┃ ${info.title}`));
+      console.log(blue(`✈┃ ${info.thumb}`));
+      console.log(green(`❖┃ ${categories}`));
+      console.log(cyan(`   ⌤ ${info.views} views   ♡ ${info.ratings} likes  ∞ ${info.publish_date.split(' ')[0]}  ☂ ${info.duration}  ${info.segment == "straight" ? "⚤ Straight" : "⚣ Gay"}\n\n`));
+
     })
+
+    return process.exit(0);
   }
 }
