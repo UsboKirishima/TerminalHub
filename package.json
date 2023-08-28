@@ -1,5 +1,5 @@
 {
-  "name": "TerminalHub",
+  "name": "terminalhub",
   "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "https://github.com/UsboKirishima/TerminalHub",
