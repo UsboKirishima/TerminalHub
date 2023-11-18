@@ -20,10 +20,13 @@ Credits:
     - UsboKirishima
     - All contributors 
 
-Copyright (c) 2022 usbo :: MIT License
+Copyright (c) 2023 usbo :: MIT License
 `
 
-
+/**
+ * @param help
+ * @description Returns all the commands 
+ */
 export const help = async ({
     client,
     message

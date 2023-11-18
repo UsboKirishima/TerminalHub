@@ -17,7 +17,7 @@ Credits:
     - UsboKirishima
     - All contributors 
 
-Copyright (c) 2022 usbo :: MIT License
+Copyright (c) 2023 usbo :: MIT License
 `
 
 export class Help {
