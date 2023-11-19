@@ -35,4 +35,20 @@ export const help = async ({
     message: Message;
 }) => {
     await client.createMessage(message.channel.id, `\`\`\`fix\n${helpText}\`\`\``);
+    /*await message.channel.createMessage({
+        content: "Test",
+        components: [
+            {
+                type: 1,
+                components: [
+                    {
+                        type: 2,
+                        label: 'Click',
+                        style: 1,
+                        custom_id: 'help'
+                    }
+                ]
+            }
+        ]
+    })*/
 }

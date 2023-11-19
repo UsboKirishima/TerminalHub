@@ -2,22 +2,56 @@ import
     RestManager 
 from '../../rest/RestManager'
 
-import { Client, Message } from 'eris'
+import { Client, Message, Embed } from 'eris'
 
 export const search = async ({
     client,
     message,
-    args
+    args,
+    parsed
 }: {
     client: Client;
     message: Message;
     args: string[];
+    parsed: any;
 }) => {
-    if(!args[1]) return message.channel.createMessage({ content: ':x: Specify the search query.' })
-    let query = `&search=${args[1]}`
-    let parsed = await new RestManager({ url: `https://www.pornhub.com/webmasters/search?`, params: { "search": query }, searchQuery: query}).getfetch();
     let random = Math.floor(Math.random() * 30);
+
+    await message.channel.createMessage({
+        embeds: [
+            {
+                title: `${parsed.videos[0].title}`,
+                url: `${parsed.videos[0].url}`,
+                description: `   ⌤ ${parsed.videos[0].views} views   ♡ ${parsed.videos[0].ratings} likes  ∞ ${parsed.videos[0].publish_date.split(' ')[0]}  ☂ ${parsed.videos[0].duration}  ${parsed.videos[0].segment == "straight" ? "⚤ Straight" : "⚣ Gay"}\n\n`,
+                image: {
+                    url: `${parsed.videos[0].thumb}`
+                },
+                footer: {
+                    text: `Page 1`
+                }
+            }
+        ],
+        components: [
+            {
+                type: 1,
+                components: [
+                    {
+                        type: 2,
+                        label: `⬅️`,
+                        style: 2,
+                        custom_id: `page_back`
+                    },
+                    {
+                        type: 2,
+                        label: `➡️`,
+                        style: 1,
+                        custom_id: `page_next`
+                    },
+                ]
+            }
+        ]
+    })/*
     await message.channel.createMessage({
         content: `${parsed.videos[random].url}`
-    })
+    })*/
 }
