@@ -3,6 +3,10 @@ import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 import { main } from "..";
 import RestManager from "../rest/RestManager";
+import RPC from "../rpc";
+import { rpcClient, rpcOptions } from "..";
+
+export let q = '';
 
 /**
  * @method TerminalHub
@@ -48,6 +52,21 @@ export default class TerminalHub {
      * @description This function asks to RestManager to fetch this url with these params.
      */
     public async search(): Promise<void> {
+        q = this.query;
+        
+        await new RPC({
+            buttons: [
+              {
+                url: "https://github.com/UsboKirishima/TerminalHub",
+                label: "GitHub"
+              }
+            ],
+            details: `Searching ${this.query}`,
+            largeImageKey: 'image',
+            state: `30 results`,
+            client: rpcClient,
+        }).connect();
+
         await new RestManager({ url: `https://www.pornhub.com/webmasters/search?`, params: { "search": this.query }, searchQuery: this.query}).search();
     }
 

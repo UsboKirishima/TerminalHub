@@ -98,7 +98,7 @@ export default class RestManager {
       console.log(cyan(`   ⌤ ${info.views} views   ♡ ${info.ratings} likes  ∞ ${info.publish_date.split(' ')[0]}  ☂ ${info.duration}  ${info.segment == "straight" ? "⚤ Straight" : "⚣ Gay"}\n\n`));
     })
 
-    return process.exit(0);
+    //return process.exit(0);
   }
 
   /**
@@ -123,6 +123,6 @@ export default class RestManager {
 
     })
 
-    return process.exit(0);
+    //return process.exit(0);
   }
 }
